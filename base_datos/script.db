@@ -1,0 +1,19 @@
+CREATE DATABASE gestion;
+USE gestion;
+
+CREATE TABLE users (
+	id mediumint not null AUTO_INCREMENT,
+	firstName VARCHAR(32) NOT NULL,
+	lastName VARCHAR(32) NOT NULL,
+	document VARCHAR(16) NOT NULL,
+	address VARCHAR(64) NOT NULL,
+	phone INT(10) DEFAULT NULL,
+	email VARCHAR(32) NOT NULL,
+	primary key (id)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+ALTER TABLE users
+ADD UNIQUE document (document);
+
+INSERT INTO users (firstName, lastName, document, address, phone, email)
+VALUES ('Vilma', 'Gómez', 313233, 'Av 39 # 2129', 300214578, 'vilma@correo.com');
